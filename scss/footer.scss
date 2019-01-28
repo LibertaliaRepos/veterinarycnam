@@ -1,0 +1,38 @@
+#global-foot {
+    
+    margin-top: 40px;
+    background: $global-menu-background;
+    box-shadow: $global-box-shadow;
+    
+    
+    ul {
+//        border: 1px solid red;
+        list-style-type: none;
+        li {text-align: center;}
+        a {
+            color: $black;
+            font-family: $link-font-family;
+            
+            &:hover {
+                text-decoration: underline;
+                
+                @media all and (min-width: 640px) {
+                    &:before {
+                        content: '- '
+                    }
+
+                    &:after {
+                        content: ' -';
+                    }
+                }
+            }
+        }
+    }
+    p {
+//        border: 1px solid green;
+    }
+    
+    ul, p {
+        margin: 0;
+    }
+}

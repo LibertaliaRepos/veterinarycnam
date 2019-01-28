@@ -1,0 +1,129 @@
+#content {
+    h2 {
+        border: 5px solid transparent;
+        border-right: 0;
+        border-top: 0;
+        border-image: linear-gradient(to top right, $blue 0%, transparentize($blue, 1) 40%);
+        border-image-slice: 1;
+        
+        padding-left: 1%;
+        text-shadow: 2px 2px 2px $white;
+    }
+    h3 {
+        color: $blue;
+        text-shadow: 1px 1px 1px darken($blue, 50%);
+    }
+    
+    .my-margin-auto {margin: auto;}
+    
+    .my-nostyle-list {
+        li {list-style-type: none;}
+    }
+    
+    .my-no-margin {margin: 0;}
+    
+    .my-no-padding {padding: 0;}
+}
+
+.my-submenu {
+    li {
+        background-color: $light-blue;
+        border: 1px solid $white;
+    }
+}
+
+.emergency {
+    color: $red;
+    text-shadow: 1px 1px 1px darken($red,50%);
+}
+
+.block-span {
+    display: block;
+}
+
+@mixin my-button($type) {
+    display: block;
+    width: 200px;
+    height: 43px;
+    margin: auto;
+
+    @if $type == inscription {
+        background: url(../img/inscription.png) no-repeat;
+        background-clip: border-box;
+
+        &:hover {
+            background: url(../img/inscription-hover.png) no-repeat;
+        }
+        &:active {
+            background: url(../img/inscription-activ.png) no-repeat;
+        }
+    } @else if $type == connection {
+        background: url(../img/connection.png) no-repeat;
+        background-clip: border-box;
+
+        &:hover {
+            background: url(../img/connection-hover.png) no-repeat;
+        }
+        &:active {
+            background: url(../img/connection-activ.png) no-repeat;
+        }
+    }        
+}
+
+@mixin disabled-imgArea {
+    background-color: transparentize($dark-gray, 0.5);
+    border-radius: $global-radius / 2;
+    
+    
+    input {
+        background-color: transparent;
+        
+        &:not(:disabled) {
+            cursor: pointer;
+        }
+    }
+    * {
+        opacity: 0.5;
+    }
+    
+    
+}
+
+@mixin pop-up {
+    border: 10px solid $medium-gray;
+    background-color: $light-gray;
+    
+    section, .reveal-content {
+        background-color: $white;
+        padding: 1%;
+        border-radius: $global-radius;
+        p {
+            span, img {
+                display: block;
+            }
+            img {margin: auto;}
+        }
+        h2 {
+            font-size: 2.1rem;
+        }
+        h3 {
+            border-bottom: 1px solid $black;
+        }
+        
+        
+    }   
+    
+    
+    .confirmBTN {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin-top: 10px;
+        button {
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+#content {
+    margin-top: 40px;
+    
+    border-radius: $global-radius;
+    background: radial-gradient($blue, transparentize($light-blue, 0.5), $yellow);
+    box-shadow: $global-box-shadow;
+    
+    .ariane {
+        .breadcrumbs {
+            font-size: 75%;
+            font-family: $link-font-family;
+        }
+    }
+    
+    #grid-x-one {
+        h1 {
+            padding-left: 5%;
+            text-align: center;
+        }
+        
+        p, ol {
+//            text-shadow: 1px 1px 1px $black;
+            
+            strong.emergency {display: block};
+            
+            .inscription-button {
+                @include my-button(inscription);
+            }
+        }
+        
+        section.employees {
+            h2 {
+                text-align: center;
+            }
+            img {
+                max-width: 200px;
+                display: inline-block;
+                vertical-align: top;
+                margin: 0 20% 0 6%;
+            }
+            
+            p {
+                display: inline-block;
+                width: 50%;
+            }
+            @media all and (max-width: 1024px) {
+                img, p {
+                    margin: auto;
+                    display: block;
+                }
+                p {
+                    margin-top: 5%;
+                }
+            }
+            @media all and (max-width: 640px) {
+                p {
+                    margin: 5% 2%;
+                    width: 95%;
+                }
+            }
+        }
+        
+        &.employee-modif {
+            table {
+                min-width: 500px;
+                max-width: 1000px;
+                margin: auto;
+                
+                tr:not(:last-child) {
+                    border-bottom: 1px solid $medium-gray;
+                }
+                
+                td, th {text-align: center;}
+            }
+            > section {
+                @media all and (max-width: 500px) {
+                    overflow-x: scroll;
+                }
+            }
+        }
+    }
+    
+    #grid-x-two, #grid-x-one.contacts-page {
+        .schedules {
+            margin: auto;
+            thead {
+                display: none;
+            }
+            tbody {
+                tr{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    &:not(:last-child) {
+                        border-bottom: 3px dotted red;
+                    }
+                }
+            }
+        }
+        
+        #detailsPhoto {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            @media all and (max-width: 1024px) and (min-width: 650px) {
+                display: none;
+            }
+            
+            img {
+                width: 100%;
+            }
+        } 
+        
+        #details {
+           padding: 8px 0;
+            
+            ul {
+                margin: 0 auto;
+                list-style-type: '- ';
+                li { 
+                    text-align: center;
+                }
+            }
+            
+            p {
+                margin: 0 auto;
+                text-align: center
+            }
+            
+            .emergency {
+                color: red;
+            }
+        }
+        h1 {
+            padding-left: 5%;
+            text-align: center;
+        }
+    }
+    
+    
+    sup {font-size: $global-font-size;}
+    a:not(.mail-counter) {text-decoration: underline;}
+}

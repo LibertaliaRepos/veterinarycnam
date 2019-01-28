@@ -1,0 +1,191 @@
+#content {
+    form {
+        border: 2px solid $black;
+        border-radius: 10px;
+        box-shadow: $global-box-shadow;
+        padding: 20px;
+        margin-bottom: 40px;
+                
+        .with-counter {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .disabled {
+            @include disabled-imgArea;
+        }
+        
+        input[type=file]:not(:disabled) {
+            cursor: pointer
+        }
+        
+        .fr-box {
+            margin-bottom: 20px;
+        }
+        
+        input[type=reset] {
+            
+        }
+    }
+    
+    .for-check, input[type=checkbox] {
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+    
+    #connectForm {
+        margin: auto;
+//        max-width: 345px;
+        fieldset {
+            input[type=image] { @include my-button(connection); }
+            a:hover{ text-decoration: underline; }
+            * { margin: auto; }
+            input:not([type=submit]) { margin-bottom: $form-spacing; }
+        }
+    }
+    
+    #sign-upForm {
+        input[type=image] { @include my-button(inscription); }
+        * { margin: auto; }
+        input:not([type=submit]) { margin-bottom: $form-spacing; }
+    }
+    
+    #takeAppointment {
+        fieldset fieldset {
+            legend {
+                font-size: $global-font-size;
+                width: 100%;
+                text-align: left;
+                padding-left: 5%;
+            }
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            
+            div {
+                width: 11%;
+                
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                
+            }
+        }
+    }
+    
+    #schedulesForm {
+        
+        margin-bottom: 10px;
+        table {
+            margin: 1%;
+            max-width: 95%;
+            border: 1px solid $black;
+            thead {
+                tr {
+                    &:nth-child(1) {
+                        background-color: $dark-gray;
+                        th {
+                            border: 1px solid $black;
+                        }
+                    }
+                    &:nth-child(2) {
+                        background-color: $medium-gray;
+                        th {
+                            border: 1px solid $dark-gray;
+                        }
+                    }
+                    th {
+                        text-align: center;
+                        padding: 2px;
+                        
+                        
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-child(odd) {
+                        background-color: $white;
+                    }
+                    &:nth-child(even) {
+                        background-color: $light-gray;
+                    }
+                    td {
+                        padding: 0;
+                        text-align: center;
+                        border: 1px solid $dark-gray;
+                        input[type=text] {
+                            max-width: 75%;
+                            min-width: 130px;
+                            margin: 0 auto 1% auto;
+                        }
+                    }
+                }
+                
+            }
+        
+        }
+        @media all and (max-width: 607px) {
+            overflow-x: scroll;
+        }
+    }
+    
+    #employeeForm {
+        fieldset {
+            select {
+                text-align: center;
+            }
+            
+            fieldset {
+                legend {
+                    font-size: $global-font-size;
+                    font-weight: normal;
+                    text-align: left;
+                }
+            }
+            #pictureArea div {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                
+                label {
+                    width: 100%;
+                }
+                input {
+                    width: 65%;
+                }
+                
+                img {
+                    max-width: 225px;
+                    max-height: 225px;
+                }
+            }
+        }
+        margin-bottom: 20px;
+    }
+    
+    #forgotPass {
+        fieldset {
+            label{white-space: nowrap;}
+            input[type=reset], input[type=submit] { margin-top: 20px; }
+        }
+    }
+    
+    @media all and (max-width: 1024px) {
+        #forgotPass {
+            fieldset {
+                legend {font-size: 100%;}
+            }
+        }
+    }
+    
+    @media all and (max-width: 640px) {
+        #connectForm {
+            margin-bottom: 40px;
+        }
+    }
+}

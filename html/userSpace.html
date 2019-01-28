@@ -1,0 +1,69 @@
+<nav class="cell ariane">
+    <ul class="breadcrumbs">
+        <li><a href="../php/">Accueil</a></li>
+        <li><span class="show-for-sr">Current: </span>Espace client</li>
+    </ul>
+</nav>
+<article id="grid-x-one" class="grid-x grid-margin-x">
+    <h1 class="cell">Espace client</h1>
+    
+    <div id="connection" class="cell large-5 medium-5 large-offset-1">
+        <!-- Connection form -->
+        <form id="connectForm" class="medium-6 grid-container" action="../php/index.php" method="get">
+            <input type="hidden" name="EX" value="userSpace" />
+            <input type="hidden" name="USER_SPACE" value="verifUser" />
+            <fieldset class="grid-x">
+                <legend class="cell">Connection</legend>
+                <label for="emailConnect" class="cell large-10 large-offset-1">Adresse de messagerie :</label>
+                    <input id="emailConnect" class="cell large-10 large-offset-1" type="email" name="EMAIL" aria-describedby="requiedFieldsConnect" required />
+
+                <label for="passwordConnect" class="cell large-10 large-offset-1">Mot de passe :</label>
+                    <input id="passwordConnect" class="cell large-10 large-offset-1" type="password" name="PWD" aria-describedby="requiedFieldsConnect" required />
+
+                <input class="cell large-10" type="image" src="../img/button-transparent.png" alt="Connection" />
+            </fieldset>
+            <a id="forgotLink" href="#">Mot de passe oublier ?</a>
+        </form>
+    </div>
+    <!-- Inscrption form -->
+    <form id="sign-upForm"  class="cell large-4 medium-7 large-offset-1  grid-container" action="../php/index.php?EX=userSpace&USER_SPACE=inscription" method="post">
+        <fieldset class="grid-x">
+            <legend class="cell">Inscription</legend>
+            
+            <p id="requiedFieldsConnect" class="cell help-text">Champs obligatoire : <sup>*</sup></p>
+            
+            
+            <div class="cell grid-x large-margin-collapse medium-margin-collapse small-margin-collapse large-up-6 medium-up-6 small-up-4">       
+                <input class="cell" type="radio" name="LABEL" value="Mme" id="mmeCivRad" required />
+                    <label for="mmeCivRad" class="cell">Mme.</label>
+                
+                <input class="cell" type="radio" name="LABEL" value="Mrs" id="mrsCivRad" />
+                    <label for="mrsCivRad" class="cell">Mrs.</label>
+
+                <input class="cell" type="radio" name="LABEL" value="Mlle" id="mlleCivRad" />
+                    <label for="mlleCivRad" class="cell">Mlle.</label>
+            </div>
+            
+            
+            <label for="nameSign" class="cell large-10 large-offset-1">Nom : <sup>*</sup></label>
+                <input id="nameSign" class="cell large-10 large-offset-1" type="text" name="NAME" aria-describedby="requiedFieldsConnect" required />
+            
+            <label for="firstnameSign" class="cell large-10 large-offset-1">Prénom : <sup>*</sup></label>
+                <input id="firstnameSign" class="cell large-10 large-offset-1" type="text" name="FIRSTNAME" aria-describedby="requiedFieldsConnect" required />
+            
+            <label for="email1Sign" class="cell large-10 large-offset-1">Adresse de messagerie : <sup>*</sup></label>
+                <input id="email1Sign" class="cell large-10 large-offset-1" type="email" name="EMAIL1" aria-describedby="requiedFieldsConnect" data-parentform="sign-upForm" data-test  data-mail-exists required />
+            
+            <label for="email2Sign" class="cell large-10 large-offset-1">Répéter adresse de messagerie : <sup>*</sup></label>
+                <input id="email2Sign" class="cell large-10 large-offset-1" type="email" name="EMAIL2" aria-describedby="requiedFieldsConnect" data-parentform="sign-upForm" data-test required />
+
+            <label for="password1Sign" class="cell large-10 large-offset-1">Mot de passe : <sup>*</sup></label>
+                <input id="password1Sign" class="cell large-10 large-offset-1" type="password" name="PWD1" aria-describedby="requiedFieldsConnect" data-test required />
+            
+            <label for="password2Sign" class="cell large-10 large-offset-1">Répéter mot de passe : <sup>*</sup></label>
+                <input id="password2Sign" class="cell large-10 large-offset-1" type="password" name="PWD2" aria-describedby="requiedFieldsConnect" data-parentform="sign-upForm" data-test required />
+
+            <input class="cell" type="image" src="../img/button-transparent.png" alt="Inscription" />
+        </fieldset>
+    </form>
+</article>

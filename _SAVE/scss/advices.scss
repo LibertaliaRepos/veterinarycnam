@@ -1,0 +1,70 @@
+.vaccin {
+    background-image: url(../img/syringe.png),
+        url(../img/chat-malade-1.jpg),
+        url(../img/chat-malade-2.jpg);
+    background-position: 10% 10%, 90% 60%, 10% 98%;
+    background-repeat: no-repeat;
+    
+    @media all and (max-width: 1024px) {
+        background-image: url(../img/syringe.png),
+        url(../img/chat-malade-1.jpg);
+        background-position: 10% 10%, 104% 68%;
+    }
+    @media all and (max-width: 640px) {
+        background-image: none;
+    }
+    
+}
+
+.advices {
+    blockquote {
+        cursor: pointer;
+        background-color: transparentize($black, 0.9);
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &:hover {
+            background-image: radial-gradient(transparent 80%, $black 100%);
+            background-color: transparentize($white, 0.5);
+        }
+        
+        div {
+            width: 75%;
+        }
+    }
+    
+    @media all and (max-width: 1024px) {
+        h3 {
+            font-size: 116%;
+        }
+    }
+    @media all and (max-width: 640px) {
+        background-image: none;
+        blockquote {
+            div {
+                width: 100%;
+            }
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+.medication {
+    h2 {
+        width: 70%;
+    }
+    ol:nth-child(1) {
+        list-style-type: none;
+        margin: 0;
+    }
+    
+    @media all and (max-width: 916px) {
+        h2 {width: 100%;}
+    }
+}

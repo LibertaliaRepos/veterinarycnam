@@ -1,0 +1,66 @@
+#site-map {
+//    border: 1px solid red;
+    
+    @extend .accordion;
+    margin: 0 auto 20px;
+    border: $accordion-content-border;
+    border-radius: 20px;
+    > li {
+        @extend .accordion-item;
+        > a {text-align: center;}
+        &:last-child a.noRadius {
+            border-radius: 0;
+        }
+        a {
+            @extend .accordion-title;
+            display: block;
+            font-family: $header-font-family;
+            border: 0;
+            
+            &::before {
+                content: none;
+            }
+            
+            
+        }
+        &:nth-child(2) {
+//            border: 1px solid green;
+            
+            width: 100%;
+            
+        }
+        ul {
+            margin-right: 1.25rem;
+            li {
+                border: $accordion-content-border;
+                span {
+                    display: block;
+                    padding-left: 5%;
+                }
+            }
+            
+            &.anchor li {
+                border: 0;
+                &::before{content: '-';}
+                a {
+                    display: inline;
+                    padding: 0 0.5rem;
+                    font-size: 0.7rem;
+                }
+                
+                &:last-child a{border: 0;}
+                
+            } 
+        }
+        .subMenu a {
+            font-size: 1rem;
+        }
+        .subsubMenu a {
+            font-size: 0.8rem;
+            &.noRadius { border-bottom: 0;}
+            }
+        
+    }
+    
+    li {list-style-type: none;}
+}
